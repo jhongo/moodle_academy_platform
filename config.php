@@ -24,6 +24,15 @@ $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
 
+//% Settings for enabling the debug mode
+$CFG->depurar = E_ALL;
+$CFG->debugdisplay = 1;
+$CFG->langstringcache = 0;
+$CFG->cachetemplates = 0;
+$CFG->cachejs = 0;
+$CFG->perfdebug = 15;
+$CFG->debugpageinfo = 1; 
+
 require_once(__DIR__ . '/lib/setup.php');
 
 // There is no php closing tag in this file,
