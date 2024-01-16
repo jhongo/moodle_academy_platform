@@ -17,30 +17,22 @@
 /**
  * TODO describe file index
  *
- * @package    local_greetings
- * @copyright  2024 JOHN GOMEZ <john.gomez@exducereonline.com>
+ * @package    local_welcome
+ * @copyright  2024 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require('../../config.php');
 
-global $SITE, $USER;
-
 require_login();
 
-$url = new moodle_url('/local/greetings/index.php', []);
+$url = new moodle_url('/local/welcome/index.php', []);
 $PAGE->set_url($url);
 $PAGE->set_context(context_system::instance());
 
-$PAGE->set_title($SITE->fullname);
-$PAGE->set_heading(get_string('pluginname', 'local_greetings'));
+$PAGE->set_title();
 
+
+$PAGE->set_heading($SITE->fullname);
 echo $OUTPUT->header();
-if (isloggedin()) {
-    echo '<h3> Saludos usuario '. fullname($USER) .'</h3>';    
-}else{
-    echo '<h3> Saludos usuario invitado </h3>';
-}
-
-echo '<h1>' . get_string('pluginname', 'local_greetings') . '</h1>';
 echo $OUTPUT->footer();
