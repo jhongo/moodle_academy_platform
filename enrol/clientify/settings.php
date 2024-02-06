@@ -15,44 +15,25 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * TODO describe file index
+ * TODO describe file settings
  *
- * @package    local_welcome
+ * @package    enrol_clientify
  * @copyright  2024 YOUR NAME <your@email.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require('../../config.php');
+ defined('MOODLE_INTERNAL') || die();
 
-global $SITE, $USER;
-
-require_login();
-
-$url = new moodle_url('/local/welcome/index.php', []);
-$PAGE->set_url($url);
-$PAGE->set_context(context_system::instance());
-
-$PAGE->set_title($SITE->fullname);
+ if ($ADMIN->fulltree) {
 
 
-$var_site = $PAGE->set_heading(get_string('pluginname', 'local_welcome'));
-
-
-
-function get_data() {
-    global $USER;    
-    $usename = $USER->firstname;
-    return $usename;
-}
-
-
-
-echo $OUTPUT->header();
-
-if (isloggedin()) {
-    echo '<h3> Saludos usuario '. get_data() .'</h3>'; 
+    // $settings->add(new admin_setting_heading('enrol_clientify','', get_string('pluginname_desc', 'enrol_clientify')));
+    $settings->add(new admin_setting_heading('enrol_clientify', get_string('clientifyheader', 'enrol_clientify'), ''));
     
-}
+
+    // $settings->add($setting);
+    // $settings->add(new admin_setting_heading('enrol_flatfile_settings', '', get_string('pluginname_desc', 'enrol_flatfile')));
 
 
-echo $OUTPUT->footer();
+ }
+
