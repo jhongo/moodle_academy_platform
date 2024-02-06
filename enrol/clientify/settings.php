@@ -28,11 +28,16 @@
 
 
     // $settings->add(new admin_setting_heading('enrol_clientify','', get_string('pluginname_desc', 'enrol_clientify')));
-    $settings->add(new admin_setting_heading('enrol_clientify', get_string('clientifyheader', 'enrol_clientify'), ''));
+    $settings->add(new admin_setting_heading('enrol_clientify', get_string('clientifyheader', 'enrol_clientify'), '' ));
     
+    
+    $configname = 'enrol_clientify/clientifyitemname';
+    $name = get_string('clientifysubitem', 'enrol_clientify');
+    $description = get_string('clientifyitemname_desc','enrol_clientify');
+    $default = 'Select course';
+    $setting = new admin_setting_configselect($configname, $name, $description, $default, array('New Seletecd Name' => 'New Seletecd Name', 'New Seletecd Name 2' => 'New Seletecd Name 2'));
 
-    // $settings->add($setting);
-    // $settings->add(new admin_setting_heading('enrol_flatfile_settings', '', get_string('pluginname_desc', 'enrol_flatfile')));
+    $settings->add($setting);
 
 
  }

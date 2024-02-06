@@ -29,4 +29,7 @@ $string['pluginname'] = 'Clientify';
 $string['pluginname_desc'] = 'Clientify is a plugin that allows you to enrol users to a course based on the client they are associated with.';
 
 $string['clientifyheader'] = 'Clientify Admin';
+$string['clientifyitemname'] = 'Seleted Courses Name';
+$string['clientifysubitem'] = 'New Seletecd Name';
+$string['clientifyitemname_desc'] = 'This is the name of the selected course.';
 
