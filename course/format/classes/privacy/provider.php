@@ -58,7 +58,7 @@ class provider implements
     public static function export_user_preferences(int $userid) {
 
         // Get user courses.
-        $courses = enrol_get_all_users_courses($userid);
+        $courses = ($userid);
 
         if (empty($courses)) {
             return;

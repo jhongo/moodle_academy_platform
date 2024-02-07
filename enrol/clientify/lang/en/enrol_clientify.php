@@ -1,4 +1,5 @@
 <?php
+use core_badges\oauth2\client;
 // This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -29,7 +30,14 @@ $string['pluginname'] = 'Clientify';
 $string['pluginname_desc'] = 'Clientify is a plugin that allows you to enrol users to a course based on the client they are associated with.';
 
 $string['clientifyheader'] = 'Clientify Admin';
-$string['clientifyitemname'] = 'Seleted Courses Name';
-$string['clientifysubitem'] = 'New Seletecd Name';
+$string['clientifyitemname'] = 'Enroll to Course';
+$string['clientifytitle'] = 'Title Clientify';
+$string['clientifyname'] = 'Course to enroll';
 $string['clientifyitemname_desc'] = 'This is the name of the selected course.';
+
+// $string['clientifysettingapiheader'] = 'Clientify API Settings';
+$string['clientifyinputname'] = 'Input for url';
+$string['clientifysettings'] = 'Title Setting';
+$string['clientifysettingname'] = 'Url to Clientify API';
+$string['clientifysettingname_des'] = 'Insert Api Url here.';
 

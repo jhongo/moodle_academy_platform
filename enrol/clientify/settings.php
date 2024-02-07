@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use core_reportbuilder\external\columns\sort\get;
+
  defined('MOODLE_INTERNAL') || die();
 
  if ($ADMIN->fulltree) {
@@ -31,14 +33,30 @@
     $settings->add(new admin_setting_heading('enrol_clientify', get_string('clientifyheader', 'enrol_clientify'), '' ));
     
     
-    $configname = 'enrol_clientify/clientifyitemname';
-    $name = get_string('clientifysubitem', 'enrol_clientify');
+    
+    
+    $courses = get_courses();
+    foreach ($courses as $course) {
+        $courselist[$course->id] = $course->fullname;
+    }
+    // var_dump($courselist);
+    // die();
+    $name =  'enrol_clientify/clientifyname';
+    $title = get_string('clientifytitle', 'enrol_clientify');
     $description = get_string('clientifyitemname_desc','enrol_clientify');
-    $default = 'Select course';
-    $setting = new admin_setting_configselect($configname, $name, $description, $default, array('New Seletecd Name' => 'New Seletecd Name', 'New Seletecd Name 2' => 'New Seletecd Name 2'));
-
+    $default = '1';
+    $setting = new admin_setting_configselect($name,$title, $description, $default, $courselist);
     $settings->add($setting);
-
+    
+    
+    $name = 'enrol_clientify/clientifysettingname';
+    $title = get_string('clientifysettings', 'enrol_clientify');
+    $description = get_string('clientifysettingname','enrol_clientify');
+    $default = 'Hello';
+    $setting = new admin_setting_configtext($name,$title, $description, $default);
+    $settings->add($setting);
+    // $setting = new admin_setting_configselect($configname, $name, $description, $default, $courselist);
+    
 
  }
 
