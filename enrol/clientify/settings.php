@@ -32,9 +32,6 @@ use core_reportbuilder\external\columns\sort\get;
     // $settings->add(new admin_setting_heading('enrol_clientify','', get_string('pluginname_desc', 'enrol_clientify')));
     $settings->add(new admin_setting_heading('enrol_clientify', get_string('clientifyheader', 'enrol_clientify'), '' ));
     
-    
-    
-    
     $courses = get_courses();
     foreach ($courses as $course) {
         $courselist[$course->id] = $course->fullname;
@@ -47,7 +44,9 @@ use core_reportbuilder\external\columns\sort\get;
     $default = '1';
     $setting = new admin_setting_configselect($name,$title, $description, $default, $courselist);
     $settings->add($setting);
-    
+
+
+    $settings->add(new admin_setting_heading('clientifysettingheader', get_string('clientifysettingheader', 'enrol_clientify'), '' ));
     
     $name = 'enrol_clientify/clientifysettingname';
     $title = get_string('clientifysettings', 'enrol_clientify');

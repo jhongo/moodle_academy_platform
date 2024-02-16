@@ -36,6 +36,7 @@ $string['clientifyname'] = 'Course to enroll';
 $string['clientifyitemname_desc'] = 'This is the name of the selected course.';
 
 // $string['clientifysettingapiheader'] = 'Clientify API Settings';
+$string['clientifysettingheader'] = 'Setting API Clientify';
 $string['clientifyinputname'] = 'Input for url';
 $string['clientifysettings'] = 'Title Setting';
 $string['clientifysettingname'] = 'Url to Clientify API';
