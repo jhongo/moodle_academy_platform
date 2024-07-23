@@ -15,16 +15,14 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Plugin strings are defined here.
+ * Plugin version and other meta-data are defined here.
  *
- * @package     local_greetings
- * @category    string
- * @copyright   2024 John Gomez <john.gomez@exducereonline.com>
+ * @package     local_ucacue_evea
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Greetings';
-$string['sectioninput'] = 'Collapse Input';
-$string['yourmessage'] = 'This your message';
+$plugin->version = 2022091600;          
+$plugin->requires = 2018051700;           
+$plugin->component = 'local_ucacue_evea_notificaciones';

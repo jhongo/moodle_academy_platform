@@ -1,4 +1,5 @@
 <?php
+use core_badges\form\message;
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -35,12 +36,28 @@ $PAGE->set_context(context_system::instance());
 $PAGE->set_title($SITE->fullname);
 $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
 
+$messageform = new \local_greetings\form\message_form();
+
 echo $OUTPUT->header();
 if (isloggedin()) {
     echo '<h3> Saludos usuario '. fullname($USER) .'</h3>';    
 }else{
     echo '<h3> Saludos usuario invitado </h3>';
 }
-
 echo '<h1>' . get_string('pluginname', 'local_greetings') . '</h1>';
+
+$messageform->display();
+
+
+$message = $messageform->get_data();
+
+if ( !isset($message->message) ){
+    $result = 'No hay mensaje';
+}else{
+    $result = required_param('message', PARAM_TEXT);
+}
+
+
+echo $OUTPUT->heading($result, 4);
+
 echo $OUTPUT->footer();

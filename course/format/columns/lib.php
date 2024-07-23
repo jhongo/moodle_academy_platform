@@ -15,16 +15,34 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Plugin strings are defined here.
+ *  Format base class.
  *
- * @package     local_greetings
- * @category    string
+ * @package     format_columns
  * @copyright   2024 John Gomez <john.gomez@exducereonline.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
+require_once($CFG->dirroot . '/course/format/lib.php');
 
-$string['pluginname'] = 'Greetings';
-$string['sectioninput'] = 'Collapse Input';
-$string['yourmessage'] = 'This your message';
+class format_columns extends core_courseformat\base {
+
+    public function uses_indentation(): bool {
+        return false;
+    }
+
+    /**
+     * Returns the information about the ajax support in the given source format.
+     *
+     * The returned object's property (boolean)capable indicates that
+     * the course format supports Moodle course ajax features.
+     *
+     * @return stdClass
+     */
+    public function supports_ajax() {
+        $ajaxsupport = new stdClass();
+        $ajaxsupport->capable = true;
+        return $ajaxsupport;
+    }
+
+}
+

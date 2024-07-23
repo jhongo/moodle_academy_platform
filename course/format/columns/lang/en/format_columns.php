@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     local_greetings
+ * @package     format_columns
  * @category    string
  * @copyright   2024 John Gomez <john.gomez@exducereonline.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,6 +25,5 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Greetings';
-$string['sectioninput'] = 'Collapse Input';
-$string['yourmessage'] = 'This your message';
+$string['pluginname'] = 'Format column';
+$string['addsection'] = 'Add section';
